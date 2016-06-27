@@ -1,2 +1,1 @@
-# foursquare-search-project
-use foursquare api
+# pizza-search

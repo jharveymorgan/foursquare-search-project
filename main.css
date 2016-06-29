@@ -1,24 +1,35 @@
 html {
     background-color: gray;
 }
-
-.input {
-    display: block;
+/*Header*/
+header {
+    text-align: center;
 }
 
+/*Input*/
+.input {
+    display: block;
+    text-align: center;
+}
+
+/*Buttons*/
 .btns-div {
     display: block;
     margin-top:1px;
-}
-
-#results {
-    display: block;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    margin-right: 8px;
+    text-align: center;
 }
 
 .btns:hover {
     background-color: #1AD6FD;
     border: 1px solid #1AD6FD;
     border-radius: 10px;
+}
+
+/*Results*/
+#results {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
 }

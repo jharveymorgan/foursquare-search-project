@@ -18,6 +18,28 @@ header {
     margin-top:1px;
     margin-right: 8px;
     text-align: center;
+
+}
+
+.btns:hover {
+    background-color: #1AD6FD;
+    border: 1px solid #1AD6FD;
+    border-radius: 10px;
+}
+
+/*Results*/
+#results {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+
+}
+
+.btns {
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 10px;
 }
 
 .btns:hover {
@@ -33,3 +55,4 @@ header {
     padding-bottom: 10px;
     text-align: center;
 }
+

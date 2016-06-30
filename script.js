@@ -35,11 +35,15 @@ $(document).ready(function() {
                 // get extraneous information
                 resInfo.twitter = data['response']['venues'][i]['contact']['twitter'];
                 resInfo.location = data['response']['venues'][i]['location'];
-                
+
+                resInfo.url = data['response']['venues'][i]['url'];
+
+
                 // append results to webpage
-                $("#results").append(resInfo.name);
-                $("#results").append(" ");
+                $("#results").append($("<h4>" + resInfo.name + ": " + "</h4>"));
+                console.log(resInfo.phone);
                 $("#results").append(resInfo.phone);
+
                 $("#results").append("<br /> <br />");
 
                 /* $("#results").append(resInfo.twitter);
@@ -50,13 +54,41 @@ $(document).ready(function() {
                 
             } // close for loop
         }); // close function for foursquare api
+
+                $("#results").append("<br /> <br />"); 
+
+                // check and see if there is a website for the restaurant
+                if (resInfo.url === undefined) {
+                    // no url to print
+                    $("#results").append("No Website");
+                    $("#results").append("<br /> <br />");
+                } else if (resInfo.url != "") {
+                    // since there is a website, append results to webpage
+                    $("#results").append($("<a href='"+resInfo.url+"'>"+resInfo.name+"</a>"));
+                    $("#results").append("<br /> <br />");
+                } else {
+                    // there's an error
+                    $("#results").append("Error. Report to Jordan.");
+                }
+                 
+                //test to see if I can print all of the restaurants information
+                // attempt to print all objects
+                // var output = resInfo;
+                // for (var property in resInfo) {
+                //     output = property + ": " + resInfo[property]+ "<br /> <br />";
+                //     $("#test").append(output)
+                // }
+
+            } // close for loop
+        }); // close function for foursquare api
+
+
         // clear contents after button is clicked
         $(".input-button").val("");
     }); // close submit button click
 
     // when clear button clicked
     $("#clear").click(function() {
-        // clear results
         $("#results").empty();
     });// close clear button click
 

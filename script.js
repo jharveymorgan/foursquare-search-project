@@ -32,7 +32,6 @@ $(document).ready(function() {
                 // restaurant information from data
                 resInfo.name = data['response']['venues'][i]['name'];
                 resInfo.phone = data['response']['venues'][i]['contact']['formattedPhone'];
-<<<<<<< HEAD
                 resInfo.address = data['response']['venues'][i]['location']['address'];
                 resInfo.crossStreet = data['response']['venues'][i]['location']['crossStreet'];
                 resInfo.url = data['response']['venues'][i]['url'];
@@ -57,7 +56,7 @@ $(document).ready(function() {
                         if (resInfo.crossStreet === undefined) {
                             $("#results").append("No Cross Street");
                             $("#results").append("<br /> <br />"); 
-                        } else { // (resInfo.crossStreet != "") {
+                        } else { 
                             // if there is a crosss street, print it
                             $("#results").append("Cross Street: " + resInfo.crossStreet);
                             $("#results").append("<br /> <br />");
@@ -75,32 +74,6 @@ $(document).ready(function() {
                     $("#results").append(resInfo.phone);
                     $("#results").append("<br /> <br />"); 
                 }
-=======
-                // get extraneous information
-                resInfo.twitter = data['response']['venues'][i]['contact']['twitter'];
-                resInfo.location = data['response']['venues'][i]['location'];
-
-                resInfo.url = data['response']['venues'][i]['url'];
-
-
-                // append results to webpage
-                $("#results").append($("<h4>" + resInfo.name + ": " + "</h4>"));
-                console.log(resInfo.phone);
-                $("#results").append(resInfo.phone);
-
-                $("#results").append("<br /> <br />");
-
-                /* $("#results").append(resInfo.twitter);
-                $("#results").append("<br /> <br />");
-
-                $("#results").append(resInfo.location);
-                $("#results").append("<br /> <br />"); */
-                
-            } // close for loop
-        }); // close function for foursquare api
-
-                $("#results").append("<br /> <br />"); 
->>>>>>> master
 
                 // check and see if there is a website for the restaurant
                 if (resInfo.url === undefined) {

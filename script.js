@@ -63,7 +63,6 @@ $(document).ready(function() {
                         } // end if/else for cross street
                 } // end if/else for address and cross street
 
-
                 // check and see if there is a phone numberfor the restaurant
                 if (resInfo.phone === undefined) {
                     // no phone to print

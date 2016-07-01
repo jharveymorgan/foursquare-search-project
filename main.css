@@ -1,9 +1,25 @@
-html {
-    background-color: gray;
-}
+
 /*Header*/
 header {
     text-align: center;
+    /*background: url("http://www.color-hex.com/palettes/5803.png");
+    background-size: cover;*/
+    color: white;
+}
+/*ul {
+    padding: 10px;
+    background: rgba(0,0,0,0.5);
+}
+
+li {
+    display: inline;
+    padding: 0px 10px 0px 10px;
+}
+*/
+
+/*Body*/
+body {
+    background-color: gray;
 }
 
 /*Input*/
@@ -12,11 +28,16 @@ header {
     text-align: center;
 }
 
+.input-button {
+    border-radius: 5px;
+    border: 1px solid white;
+}
+
 /*Buttons*/
 .btns-div {
     display: block;
-    margin-top:1px;
-    margin-right: 8px;
+    margin-top:5px;
+    margin-right: 9px;
     text-align: center;
 
 }
@@ -39,13 +60,13 @@ header {
 .btns {
     background-color: white;
     border: 1px solid white;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .btns:hover {
     background-color: #1AD6FD;
     border: 1px solid #1AD6FD;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 /*Results*/

@@ -32,6 +32,50 @@ $(document).ready(function() {
                 // restaurant information from data
                 resInfo.name = data['response']['venues'][i]['name'];
                 resInfo.phone = data['response']['venues'][i]['contact']['formattedPhone'];
+<<<<<<< HEAD
+                resInfo.address = data['response']['venues'][i]['location']['address'];
+                resInfo.crossStreet = data['response']['venues'][i]['location']['crossStreet'];
+                resInfo.url = data['response']['venues'][i]['url'];
+
+
+                // get extraneous/unused information
+                resInfo.twitter = data['response']['venues'][i]['contact']['twitter'];
+
+                // append results to webpage
+                $("#results").append($("<h4>" + resInfo.name + ": </h4>"));
+
+                // check and see if there is an address and cross street
+                if (resInfo.address === undefined) {
+                    $("#results").append("No Address");
+                    $("#results").append("<br /> <br />"); 
+                } else { 
+                    // if there is an address, print it  
+                    $("#results").append("Address: " + resInfo.address);
+                    $("#results").append("<br /> <br />");
+
+                        // check if there is a cross street
+                        if (resInfo.crossStreet === undefined) {
+                            $("#results").append("No Cross Street");
+                            $("#results").append("<br /> <br />"); 
+                        } else { // (resInfo.crossStreet != "") {
+                            // if there is a crosss street, print it
+                            $("#results").append("Cross Street: " + resInfo.crossStreet);
+                            $("#results").append("<br /> <br />");
+                        } // end if/else for cross street
+                } // end if/else for address and cross street
+
+
+                // check and see if there is a phone numberfor the restaurant
+                if (resInfo.phone === undefined) {
+                    // no phone to print
+                    $("#results").append("No Phone Number");
+                    $("#results").append("<br /> <br />");   
+                } else { 
+                    // since there is a phone number, print it
+                    $("#results").append(resInfo.phone);
+                    $("#results").append("<br /> <br />"); 
+                }
+=======
                 // get extraneous information
                 resInfo.twitter = data['response']['venues'][i]['contact']['twitter'];
                 resInfo.location = data['response']['venues'][i]['location'];
@@ -56,28 +100,24 @@ $(document).ready(function() {
         }); // close function for foursquare api
 
                 $("#results").append("<br /> <br />"); 
+>>>>>>> master
 
                 // check and see if there is a website for the restaurant
                 if (resInfo.url === undefined) {
                     // no url to print
                     $("#results").append("No Website");
                     $("#results").append("<br /> <br />");
-                } else if (resInfo.url != "") {
+                } else { 
                     // since there is a website, append results to webpage
                     $("#results").append($("<a href='"+resInfo.url+"'>"+resInfo.name+"</a>"));
                     $("#results").append("<br /> <br />");
-                } else {
-                    // there's an error
-                    $("#results").append("Error. Report to Jordan.");
                 }
                  
-                //test to see if I can print all of the restaurants information
-                // attempt to print all objects
-                // var output = resInfo;
-                // for (var property in resInfo) {
-                //     output = property + ": " + resInfo[property]+ "<br /> <br />";
-                //     $("#test").append(output)
-                // }
+                // if there isn't a phone number or website, show google results of restaurant
+                if ((resInfo.phone === undefined) || (resInfo.url === undefined)){
+                    // link to google results
+                    $("#results").append($("<a href='https://www.google.com/search?q="+resInfo.name+"' "+ "target='_blank'>"+ "Google: "+ resInfo.name+"</a>"));
+                }
 
             } // close for loop
         }); // close function for foursquare api

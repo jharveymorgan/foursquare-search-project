@@ -39,6 +39,22 @@ body {
     margin-top:5px;
     margin-right: 9px;
     text-align: center;
+
+}
+
+.btns:hover {
+    background-color: #1AD6FD;
+    border: 1px solid #1AD6FD;
+    border-radius: 10px;
+}
+
+/*Results*/
+#results {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+
 }
 
 .btns {
@@ -60,3 +76,4 @@ body {
     padding-bottom: 10px;
     text-align: center;
 }
+
